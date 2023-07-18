@@ -9,10 +9,10 @@ This repository contains a docker image that creates a proxy based on [Privoxy](
 
 ## Installation
 
-Run the following command, replace PORT with your desired port number:
+Run the following command, replace PORT with your desired port number and ARCH with your architecture (`amd64` or `arm64`).
 
 ```bash
-sudo docker run -d -p PORT:8118 --restart=unless-stopped --name=hsproxy ghcr.io/c10udburst/hsproxy
+sudo docker run -d -p PORT:8118 --restart=unless-stopped --name=hsproxy ghcr.io/c10udburst/hsproxy:ARCH
 ```
 
 ## Usage
