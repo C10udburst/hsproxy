@@ -11,8 +11,7 @@ COPY --chown=i2pd:i2pd ./i2pd.conf /etc/i2pd/i2pd.conf
 COPY --chown=tor:tor ./torrc.conf /etc/tor/torrc
 COPY --chmod=755 ./entrypoint.sh /entrypoint.sh
 
-# Remove default templates
-RUN rm /etc/privoxy/*.new \
-    && rm -rf /etc/privoxy/templates
+# Remove sample config files
+RUN rm /etc/privoxy/*.new
 
 ENTRYPOINT [ "/bin/sh", "/entrypoint.sh" ]
