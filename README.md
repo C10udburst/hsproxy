@@ -9,7 +9,7 @@ This repository contains a docker image that creates a proxy based on [Privoxy](
 
 ## Installation
 
-Run the following command, replace PORT with your desired port number and ARCH with your architecture (`amd64` or `arm64`).
+Run the following command, replace PORT with your desired port number and ARCH with your architecture (`amd64` or `arm64` or `386`).
 
 ```bash
 sudo docker run -d -p PORT:8118 --restart=unless-stopped --name=hsproxy ghcr.io/c10udburst/hsproxy:ARCH
@@ -25,4 +25,9 @@ After configuring the proxy, you can check if it works by visiting [config.privo
 
 After all that, `.i2p` and `.onion` sites should work (as well as regular websites of course).
 
-Note that https may not work for `.onion` or `.i2p` sites, as they may not have valid certificates.
+## Notes
+
+- Https may not work for `.onion` or `.i2p` sites, as they may not have valid certificates.
+- The proxy does not route clearnet traffic through Tor, only `.onion` domains.
+- The proxy is inherently less secure than Tor Browser, as it does not have the same protections against fingerprinting.
+- Javascript is disabled for `.onion` and `.i2p` sites, for privacy and security reasons.

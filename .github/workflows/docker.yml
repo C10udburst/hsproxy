@@ -12,7 +12,7 @@ jobs:
         include:
           - arch: amd64
           - arch: arm64
-          - arch: armv7
+          - arch: 386
     runs-on: ubuntu-latest
     permissions:
       contents: read
